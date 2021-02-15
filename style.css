@@ -4,3 +4,19 @@
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
+.d-flex {
+  display: flex;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.card {
+  margin: 40px;
+}
+.col-3 {
+  width: calc(100% / 3);
+}

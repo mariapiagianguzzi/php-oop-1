@@ -62,19 +62,19 @@ $books = [$libro1, $libro2, $libro3];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
 
   <!-- parte php -->
-  <div class="cds-container container">
+  <div class="cds-container container d-flex">
         <?php foreach($books as $value){?>
-            <div class="card">
+            <div class="card col-3">
                 <h3><?php echo $value->getTitle(); ?></h3>
-                <span class="author"><?php echo $value->getAuthor(); ?></span>
-                <span class="genre"><?php echo $value->getGenre();?></span>
-                <span class="year"><?php echo $value->getYear();?></span>
+                <p class="author"><?php echo $value->getAuthor(); ?></p>
+                <p class="genre"><?php echo $value->getGenre();?></p>
+                <p class="year"><?php echo $value->getYear();?></p>
             </div>
         <?php } ?>        
     </div>
