@@ -17,21 +17,32 @@ class Book {
         $this -> title = $title;
         $this -> year = $year;
         $this -> author = $author;
-        $this -> gnre = $genre;
-    }
-    public function setYearTitleAuthorGenre(int $year, string $title, string $author, string $genre)
-    {
-        $this -> yaer = $year;
-        $this -> title = $title;
-        $this -> author = $author;
         $this -> genre = $genre;
     }
-    public function getYearTitleAuthorGenre(){
-        return $this->year;
-        return $this->title;
-        return $this->author;
-        return $this->genre;
+    public function setYearTitleAuthorGenre(int $year)
+    {
+        $this -> yaer = $year;
+/*         $this -> title = $title;
+        $this -> author = $author;
+        $this -> genre = $genre; come ho fatto con il Get*/
     }
+    public function getYear(){
+        return $this->year;
+
+    }
+    public function getTitle(){
+        return $this->title;
+
+    }
+    public function getAuthor(){
+        return $this->author;
+
+    }
+    public function getGenre(){
+        return $this->genre;
+
+    }
+    
 }
 
 $libro1 = new Book('La cattedrale del male', 2007, 'Ildefonso Falcones', 'fantasy');
@@ -40,15 +51,7 @@ $libro3 = new Book('1984', 1949, 'George Orwell', 'fantascienza sociologica');
 
 
 $books = [$libro1, $libro2, $libro3];
-var_dump($libro1, $libro2, $libro3);
-
-$libro1->setYear(2007);
-$libro2->setYear(2007);
-$libro3->setYear(1949);
-var_dump($libro1, $libro2, $libro3);
-
-
-echo($libro1->getYearTitleAuthorGenre());
+/* var_dump($libro1, $libro2, $libro3); */
 
 
 ?>
@@ -68,13 +71,14 @@ echo($libro1->getYearTitleAuthorGenre());
   <div class="cds-container container">
         <?php foreach($books as $value){?>
             <div class="card">
-            <h3><?php echo $value["title"]; ?></h3>
-                <span class="author"><?php echo $value["author"]; ?></span>
-                <span class="year"><?php echo $value["year"];?></span>
+                <h3><?php echo $value->getTitle(); ?></h3>
+                <span class="author"><?php echo $value->getAuthor(); ?></span>
+                <span class="genre"><?php echo $value->getGenre();?></span>
+                <span class="year"><?php echo $value->getYear();?></span>
             </div>
-                
+        <?php } ?>        
     </div>
-        <?php } ?> 
+        
 </body>
 </html>
 
